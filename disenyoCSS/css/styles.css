@@ -895,7 +895,6 @@ header {
     justify-content: center;
     align-items: center;
     max-width: var(--ancho-contenedor);
-    border: 2px solid;
     padding: 26px;
     gap: 25px;
     & iframe{
