@@ -291,7 +291,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url(../public/FondoSlider.webp);
+  background-image: url(../public/images/FondoSlider.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -544,7 +544,7 @@ header {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-image: url(../public/FondoSecciones.webp);
+  background-image: url(../public/images/FondoSecciones.webp);
   background-repeat: round;
   color: var(--color-primario);
   padding: 100px var(--padding-seccion-horizontal);
@@ -808,7 +808,7 @@ header {
    ======================================== */
 /* Sección de testimonios de clientes */
 #happy-clients {
-  background-image: url(../public/FondoSecciones.webp);
+  background-image: url(../public/images/FondoSecciones.webp);
   background-repeat: round;
   display: flex;
   flex-direction: column;
