@@ -20,11 +20,11 @@
     />
   </head>
   <body>
-    <h1 class="none">Página Web APAR</h1>
+    
     <!-- ========== Página llamada desde la carpeta Multimedia ========== -->
 
     <!-- ========== HEADER ========== -->
-    <header>
+    <header role="banner">
       <!-- Barra superior: ubicación, horario, divisa e idioma -->
       <section id="barra-superior">
         <h2 class="none">
@@ -111,7 +111,7 @@
           <!-- Enlace a departamentos de la tienda -->
           <a href="#">SHOP DEPARTMENTS</a>
           <!-- Menú de navegación principal -->
-          <nav>
+          <nav role="navigation">
             <ul>
               <li><a href="#">HOME</a><i class="bi bi-caret-down-fill"></i></li>
               <li><a href="#">SHOP</a></li>
@@ -133,7 +133,8 @@
     </header>
 
     <!-- ========== MAIN CONTENT ========== -->
-    <main>
+    <main role="main">
+      <h1 class="visually-hidden">Página Web APAR</h1>
       <!-- Sección del slider principal con búsqueda de vehículos -->
       <section id="slider">
         <div>
@@ -256,7 +257,7 @@
                     src="static/public/images/ProductosDestacados/Neumatico.webp"
                     alt="Horrison tire product image"
                   />
-                  <span aria-label="En oferta">Sale !</span>
+                  <span>Sale !</span>
                 </div>
 
                 <h4>HORRISON</h4>
@@ -305,7 +306,7 @@
                     src="static/public/images/ProductosDestacados/Llanta.webp"
                     alt="Wallnut Desk wheel product image"
                   />
-                  <span aria-label="En oferta">Sale !</span>
+                  <span>Sale !</span>
                 </div>
 
                 <h4>WALLNUT DESK</h4>
@@ -354,7 +355,7 @@
                     src="static/public/images/ProductosDestacados/DiscoFreno.webp"
                     alt="Arper Round brake disc product image"
                   />
-                  <span aria-label="En oferta">Sale !</span>
+                  <span>Sale !</span>
                 </div>
 
                 <h4>ARPER ROUND</h4>
@@ -403,7 +404,7 @@
                     src="static/public/images/ProductosDestacados/Aceite.webp"
                     alt="Auto oil product image"
                   />
-                  <span aria-label="En oferta">Sale !</span>
+                  <span>Sale !</span>
                 </div>
 
                 <h4>AUTO OIL</h4>
@@ -497,7 +498,7 @@
                     src="static/public/images/ProductosDestacados/Turbocompresor.webp"
                     alt="Ottoman Turbo turbocharger product image"
                   />
-                  <span aria-label="En oferta">Sale !</span>
+                  <span>Sale !</span>
                 </div>
 
                 <h4>OTTOMAN TURBO</h4>
@@ -715,9 +716,7 @@
                     src="static/public/images/Kit/FiltroKit.png"
                     alt="Oak Wooden filter kit product image"
                   />
-                  <span class="badge-agotado" aria-label="Agotado"
-                    >Sold out</span
-                  >
+                  <span class="badge-agotado">Sold out</span>
                 </div>
                 <h3>OAK WOODEN</h3>
                 <ul aria-label="Valoración: 5 de 5 estrellas">
@@ -760,9 +759,7 @@
                     src="static/public/images/Kit/LlantaKit.png"
                     alt="Umbrella Stand wheel kit product image"
                   />
-                  <span class="badge-oferta" aria-label="En oferta"
-                    >Sale !</span
-                  >
+                  <span class="badge-oferta">Sale !</span>
                 </div>
                 <h3>UMBRELLA STAND</h3>
                 <ul aria-label="Valoración: 5 de 5 estrellas">
@@ -973,7 +970,7 @@
   
 
     <!-- ========== FOOTER ========== -->
-    <footer>
+    <footer role="contentinfo">
       <div>
         <!-- Columna 1: Información de contacto -->
         <section>

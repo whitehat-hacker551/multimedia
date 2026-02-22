@@ -766,8 +766,14 @@ header {
     & article {
       display: flex;
       flex-direction: column;
+      align-items: center; /* centrar contenidos verticalmente */
+      text-align: center;  /* centrar texto dentro de la tarjeta */
+      justify-content: center;
       font-family: var(--fuente-principal);
 
+      & img {
+        margin: 0 auto;
+      }
       & del {
         color: var(--color-secundario4);
       }
