@@ -655,9 +655,11 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; /* centra horizontalmente los elementos */
+  text-align: center;  /* texto centrado por defecto */
   gap: 65px;
   padding: var(--padding-seccion-vertical) var(--padding-seccion-horizontal);
+
   /* Enlaces con efecto hover */
   & a {
     color: var(--color-secundario1);
@@ -678,11 +680,13 @@ header {
       flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
+      justify-content: center; /* centra las columnas de categorías */
 
       & li {
         display: flex;
         flex-direction: column;
+        align-items: center; /* centra el contenido dentro de cada li */
+        justify-content: center;
         font-family: var(--fuente-principal);
         font-weight: bold;
         text-align: center;
@@ -699,7 +703,8 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center; /* centrar grid de productos */
+    align-items: center;
     max-width: var(--ancho-contenedor);
     font-size: smaller;
     gap: 40px;
