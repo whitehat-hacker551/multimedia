@@ -11,9 +11,20 @@
         <h1>Bienvenido a la Zona Multimedia</h1>
         <p class="welcome-text">
             Descubre la experiencia completa de APAR.<br>
-            Haz clic en el botón para acceder a nuestra web interactiva.
+            Selecciona uno de los proyectos abajo para acceder.
         </p>
-        <a href="disenyoCSS/indexAPARSemantico.html" class="link-button">Entrar a APAR</a>
+        <nav aria-label="Navegación principal de proyectos">
+            <ul class="project-links">
+                <li><a href="disenyoCSS/indexAPARSemantico.html" class="link-button" aria-describedby="desc-disenyo">Diseño CSS — APAR</a></li>
+                <li><a href="multimedia/indexAPARSemantico.html" class="link-button" aria-describedby="desc-multimedia">Multimedia — APAR</a></li>
+                <li><a href="proyectoAAA/indexAPARSemantico.html" class="link-button" aria-describedby="desc-proyecto">Proyecto AAA — APAR</a></li>
+            </ul>
+        </nav>
+        <div class="sr-only" aria-hidden="false">
+            <p id="desc-disenyo">Sección de diseño y estilos accesibles.</p>
+            <p id="desc-multimedia">Sección con audio, imágenes y vídeo del proyecto.</p>
+            <p id="desc-proyecto">Sección del proyecto AAA con recursos y demostraciones.</p>
+        </div>
     </div>
 </body>
 </html>
