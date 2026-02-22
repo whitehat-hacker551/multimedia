@@ -7,8 +7,9 @@
   --color-secundario1: black;
   --color-secundario2: rgb(42, 44, 60);
   --color-secundario3: rgb(42, 44, 61);
-  --color-secundario4: rgb(197, 193, 193);
-  --color-resaltado: rgb(252, 90, 52);
+  --color-secundario4: #B4B0B0; /* ajustado ligeramente más oscuro para mejorar contraste */
+  --color-footer-link: #ffffff; /* color explícito de enlaces en footer (alto contraste) */
+  --color-resaltado: #CC3F1E;
 
   /* Dimensiones */
   --altura-imagenes-galeria: 200px;
@@ -21,6 +22,51 @@
   --ancho-contenedor: 900px;
   --padding-seccion-vertical: 50px;
   --padding-seccion-horizontal: 20px;
+}
+
+/* ========================================
+   AAA - Target size & Visual presentation
+   ======================================== */
+/* Asegurar área táctil mínima 44x44px para elementos interactivos */
+button,
+input[type="button"],
+input[type="submit"],
+a[href],
+[role="button"] {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 6px 10px; /* padding suave que amplía el objetivo sin romper diseño */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Evitar que los iconos internos capturen el pointer y desplacen el centro táctil */
+a[href] > i,
+button > i,
+[role="button"] > i {
+  pointer-events: none;
+  display: inline-block;
+}
+
+/* Line-height mínimo 1.5 para mejorar la legibilidad (Visual Presentation AAA) */
+p,
+li,
+dd,
+dt,
+address,
+main,
+article,
+section {
+  line-height: 1.5;
+}
+
+/* Asegurar color de enlaces en el footer (regla plana para evitar problemas de anidado) */
+footer a,
+footer a:link,
+footer a:visited {
+  color: var(--color-footer-link) !important;
 }
 
 /* ========================================
@@ -65,11 +111,26 @@ ul {
 /* Botones con color de marca */
 button {
   background-color: var(--color-resaltado);
+  color: var(--color-primario);
 }
 
 /* Clase de utilidad para ocultar elementos */
 .none {
   display: none !important;
+}
+
+/* Utilidad: ocultar visualmente pero mantener accesible para lectores de pantalla */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Iconos con color de marca */
@@ -151,7 +212,7 @@ header {
 
     & select {
       border: none;
-      color: var(--color-resaltado);
+      color: var(--color-secundario2);
       background-color: var(--color-secundario4);
     }
   }
@@ -430,11 +491,12 @@ header {
           top: 60%;
           left: 50%;
           transform: translate(-50%, -50%);
-          background-color: var(--color-primario);
+          background-color: var(--color-primario); /* usa variable del root */
+          color: var(--color-secundario1); /* usa variable del root */
+          border: 1px solid var(--color-secundario4); /* neutro desde root */
           border-radius: 5%;
           font-weight: bold;
           font-family: var(--fuente-principal);
-          border: none;
         }
       }
 
@@ -978,7 +1040,7 @@ footer {
 
     /* Enlaces del footer */
     & a {
-      color: var(--color-primario);
+      color: var(--color-footer-link);
     }
 
     /* Iconos del footer */

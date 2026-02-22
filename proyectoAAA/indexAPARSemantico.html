@@ -52,7 +52,7 @@
           <div>
             <!-- Selector de divisa -->
             <div>
-              Currency:
+              <label for="selectorDivisa">Currency:</label>
               <select name="Divisa" id="selectorDivisa">
                 <option selected value="USD">USD</option>
                 <option value="EUR">EUR</option>
@@ -61,7 +61,7 @@
             </div>
             <!-- Selector de idioma -->
             <div>
-              Language:
+              <label for="selectorIdioma">Language:</label>
               <select name="Idioma" id="selectorIdioma">
                 <option value="EEUU">EEUU</option>
                 <option value="ESP">ESP</option>
@@ -82,18 +82,21 @@
 
           <!-- Formulario de búsqueda de productos -->
           <form action="">
-            <input type="search" placeholder="Search entire store item..." />
-            <button><i class="bi bi-search" aria-hidden="true"></i></button>
+            <label for="searchInput" class="visually-hidden">Search products</label>
+            <input id="searchInput" type="search" placeholder="Search entire store item..." />
+            <button aria-label="Buscar">
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </button>
           </form>
           <div>
             <div>
-              <a href="#"><i class="bi bi-heart" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Open wishlist"><i class="bi bi-heart" aria-hidden="true"></i></a>
               <a href="#">WISHLIST </a>
             </div>
 
             <!-- Enlace al carrito de compras -->
             <div>
-              <a href="#"><i class="bi bi-handbag" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Open cart"><i class="bi bi-handbag" aria-hidden="true"></i></a>
               <a href="#">MY CART</a>
             </div>
           </div>
@@ -139,15 +142,18 @@
 
           <!-- Formulario de búsqueda de vehículos por marca, modelo y año -->
           <form action="">
-            <select name="make">
+            <label for="makeSelect" class="visually-hidden">Make</label>
+            <select id="makeSelect" name="make">
               <option value="">-- Make --</option>
             </select>
 
-            <select name="model">
+            <label for="modelSelect" class="visually-hidden">Model</label>
+            <select id="modelSelect" name="model">
               <option value="">-- Model --</option>
             </select>
 
-            <select name="year">
+            <label for="yearSelect" class="visually-hidden">Year</label>
+            <select id="yearSelect" name="year">
               <option value="">-- Year --</option>
             </select>
 
@@ -657,8 +663,8 @@
               </ul>
               <!-- Botones de navegación del carrusel -->
               <div>
-                <button><i class="bi bi-caret-left-fill"></i></button>
-                <button><i class="bi bi-caret-right-fill"></i></button>
+                <button aria-label="Previous kits"><i class="bi bi-caret-left-fill" aria-hidden="true"></i></button>
+                <button aria-label="Next kits"><i class="bi bi-caret-right-fill" aria-hidden="true"></i></button>
               </div>
             </div>
 
@@ -805,8 +811,8 @@
               <h3>DEAL OF THE DAY</h3>
               <!-- Navegación del producto destacado -->
               <div>
-                <button><i class="bi bi-caret-left-fill"></i></button>
-                <button><i class="bi bi-caret-right-fill"></i></button>
+                <button aria-label="Previous product"><i class="bi bi-caret-left-fill" aria-hidden="true"></i></button>
+                <button aria-label="Next product"><i class="bi bi-caret-right-fill" aria-hidden="true"></i></button>
               </div>
             </div>
             <!-- Detalles del producto destacado -->
@@ -1035,8 +1041,9 @@
             Subscribe to our Newsletter and get bonuses for the next purchase.
           </div>
           <form action="">
-            <input type="email" placeholder="Enter Your Email" />
-            <button><i class="bi bi-send" aria-hidden="true"></i></button>
+            <label for="newsletterEmail" class="visually-hidden">Email address</label>
+            <input id="newsletterEmail" type="email" placeholder="Enter Your Email" />
+            <button aria-label="Subscribe"><i class="bi bi-send" aria-hidden="true"></i></button>
           </form>
         </section>
 
