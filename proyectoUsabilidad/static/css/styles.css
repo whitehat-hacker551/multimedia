@@ -23,6 +23,14 @@
   --padding-seccion-vertical: 50px;
   --padding-seccion-horizontal: 20px;
 }
+/* Ensure bootstrap-icons font uses font-display: swap to avoid FOIT/CLS */
+@font-face {
+  font-family: 'bootstrap-icons';
+  src: url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/fonts/bootstrap-icons.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 html {
   font-display: swap;
 }
