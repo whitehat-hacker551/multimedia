@@ -1,165 +1,112 @@
+/* Basic, pleasant and accessible styles for index.html (no classes required) */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 20px;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+  background: linear-gradient(180deg, #eef2ff 0%, #ffffff 100%);
+  color: #0f172a;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
 }
 
-.container {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 60px 40px;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    max-width: 600px;
-    animation: fadeIn 0.8s ease-in;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* main wrapper (first div in body) */
+body > div {
+  width: 100%;
+  max-width: 880px;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
 }
 
 h1 {
-    color: #333;
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    font-weight: 700;
+  font-size: 1.8rem;
+  color: #0b1220;
+  margin-bottom: 8px;
 }
 
-.welcome-text {
-    color: #555;
-    font-size: 1.2em;
-    margin-bottom: 40px;
-    line-height: 1.6;
+/* intro paragraph */
+body > div > p:first-of-type {
+  color: #475569;
+  margin-bottom: 18px;
+  line-height: 1.5;
 }
 
-.link-button {
-    display: inline-block;
-    padding: 18px 40px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-size: 1.1em;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+/* project links */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+nav ul li a {
+  display: inline-block;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav ul li a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(59, 130, 246, 0.15);
 }
 
-.link-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+@media (min-width: 640px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
-.link-button:active {
-    transform: translateY(-1px);
+/* project description block — last child div inside wrapper */
+body > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  margin-top: 12px;
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 8px;
+  color: #334155;
 }
 
-/* Responsive design */
-@media (max-width: 600px) {
-    .container {
-        padding: 40px 30px;
-    }
-    
-    h1 {
-        font-size: 2em;
-    }
-    
-    .welcome-text {
-        font-size: 1em;
-    }
+a:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
 }
 
-/* Project links layout and accessibility enhancements */
-.project-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: stretch;
+/* small helpers */
+small {
+  color: #64748b;
 }
 
-.project-links li a {
-    display: block;
-    padding: 14px 20px;
-    border-radius: 12px;
-    text-align: center;
-    min-width: 200px;
-}
-
-@media (min-width: 600px) {
-    .project-links {
-        flex-direction: row;
-        justify-content: center;
-        gap: 18px;
-    }
-    .project-links li a {
-        min-width: 180px;
-    }
-}
-
-/* Visible focus for keyboard users */
-:focus {
-    outline: none;
-}
-
-:focus-visible, .link-button:focus-visible {
-    outline: 3px solid #ffd966;
-    outline-offset: 4px;
-    box-shadow: 0 0 0 4px rgba(102,126,234,0.12);
-}
-
-/* Screen-reader only helper */
-.sr-only {
-    position: absolute !important;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-/* Respect user motion preferences */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none !important;
-        transition: none !important;
-    }
-}
-
-/* Slightly reduce container padding on very small screens */
-@media (max-width: 380px) {
-    .container {
-        padding: 24px 18px;
-        border-radius: 12px;
-    }
-    .link-button {
-        padding: 12px 18px;
-        font-size: 1em;
-    }
-}
-
-ul{
-    list-style: none;
+/* keep page simple on very small screens */
+@media (max-width: 420px) {
+  body > div {
+    padding: 18px;
+  }
+  h1 {
+    font-size: 1.4rem;
+  }
+  nav ul li a {
+    padding: 8px 10px;
+  }
 }

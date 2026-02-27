@@ -1,0 +1,1091 @@
+/* ========================================
+   VARIABLES GLOBALES
+   ======================================== */
+:root {
+  /* Colores principales */
+  --color-primario: white;
+  --color-secundario1: black;
+  --color-secundario2: rgb(42, 44, 60);
+  --color-secundario3: rgb(42, 44, 61);
+  --color-secundario4: #B4B0B0; /* ajustado ligeramente más oscuro para mejorar contraste */
+  --color-footer-link: #ffffff; /* color explícito de enlaces en footer (alto contraste) */
+  --color-resaltado: #CC3F1E;
+
+  /* Dimensiones */
+  --altura-imagenes-galeria: 200px;
+
+  /* Tipografías */
+  --fuente-principal: "Nova Square", sans-serif;
+  --fuente-secundaria: "NotoSansLinearB", sans-serif;
+
+  /* Layout */
+  --ancho-contenedor: 900px;
+  --padding-seccion-vertical: 50px;
+  --padding-seccion-horizontal: 20px;
+}
+
+/* ========================================
+   AAA - Target size & Visual presentation
+   ======================================== */
+/* Asegurar área táctil mínima 44x44px para elementos interactivos */
+button,
+input[type="button"],
+input[type="submit"],
+a[href],
+[role="button"] {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 6px 10px; /* padding suave que amplía el objetivo sin romper diseño */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Evitar que los iconos internos capturen el pointer y desplacen el centro táctil */
+a[href] > i,
+button > i,
+[role="button"] > i {
+  pointer-events: none;
+  display: inline-block;
+}
+
+/* Line-height mínimo 1.5 para mejorar la legibilidad (Visual Presentation AAA) */
+p,
+li,
+dd,
+dt,
+address,
+main,
+article,
+section {
+  line-height: 1.5;
+}
+
+/* Asegurar color de enlaces en el footer (regla plana para evitar problemas de anidado) */
+footer a,
+footer a:link,
+footer a:visited {
+  color: var(--color-footer-link) !important;
+}
+
+/* ========================================
+   ESTILOS GENERALES
+   ======================================== */
+/* Reseteo y estilos base para elementos HTML */
+body {
+  font-family: var(--fuente-secundaria);
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Tipografía de títulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fuente-principal);
+}
+
+/* Imágenes responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Enlaces sin subrayado */
+a {
+  text-decoration: none;
+}
+
+/* Listas sin estilos */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Botones con color de marca */
+button {
+  background-color: var(--color-resaltado);
+  color: var(--color-primario);
+}
+
+/* Clase de utilidad para ocultar elementos */
+.none {
+  display: none !important;
+}
+
+/* Utilidad: ocultar visualmente pero mantener accesible para lectores de pantalla */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Iconos con color de marca */
+.iconos-resaltados {
+  color: var(--color-resaltado);
+}
+
+.bi-caret-down-fill {
+  color: var(--color-primario);
+}
+
+/* Media Query Global - Móviles pequeños */
+@media (max-width: 600px) {
+  section,
+  header,
+  main,
+  footer {
+    margin: 0;
+    padding: 0;
+  }
+
+  #barra-superior > div,
+  #barra-busqueda > div,
+  #barra-navegacion > div,
+  #servicio > div,
+  #productos-destacados > div,
+  #marcas > div,
+  #productos-tipos > div,
+  footer > div {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+/* Encabezado principal del sitio */
+header {
+  display: flex;
+  flex-direction: column;
+
+  & > section {
+    & > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  /* Sección 1: Barra superior con información de contacto y selectores */
+  &  #barra-superior {
+    padding: 13px var(--padding-seccion-horizontal);
+    font-family: var(--fuente-secundaria);
+    color: var(--color-secundario3);
+    font-weight: bolder;
+    font-size: x-small;
+    background-color: var(--color-secundario4);
+
+    & > div {
+      display: flex;
+      justify-content: space-between;
+      max-width: var(--ancho-contenedor);
+      width: 100%;
+      margin: 0 auto;
+
+      @media (width <= 1000px) {
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+      }
+
+      & > div {
+        display: flex;
+        gap: 15px;
+      }
+    }
+
+    & select {
+      border: none;
+      color: var(--color-secundario2);
+      background-color: var(--color-secundario4);
+    }
+  }
+
+  /* Sección 2: Logo, buscador y carrito */
+  &  #barra-busqueda {
+    font-family: var(--fuente-principal);
+    color: var(--color-secundario1);
+    padding: 10px;
+
+    & > div {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      max-width: var(--ancho-contenedor);
+      width: 100%;
+      margin: 0 auto;
+      gap: 20px;
+      justify-content: space-between;
+
+      @media (width <= 1000px) {
+        justify-content: center;
+        gap: 5px;
+      }
+
+      & img {
+        height: 80px;
+        width: auto;
+      }
+
+      & form {
+        display: flex;
+        flex-direction: row;
+
+        & input {
+          background-color: var(--color-primario);
+          border: solid 1px var(--color-resaltado);
+          width: 300px;
+          padding: 10px;
+        }
+
+        & button {
+          border: none;
+          padding: 10px;
+        }
+
+        & i {
+          color: var(--color-primario);
+        }
+      }
+
+      & div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        & a {
+          color: var(--color-secundario1);
+        }
+      }
+    }
+  }
+  
+  /* Sección 3: Menú de navegación principal */
+  & #barra-navegacion {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-secundario2);
+    padding: 0 var(--padding-seccion-horizontal);
+
+    & div {
+      display: flex;
+      justify-content: center;
+      max-width: var(--ancho-contenedor);
+      margin: 0 auto;
+      gap: 40px;
+      align-items: center;
+
+      & a {
+        color: var(--color-primario);
+      }
+
+      & ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      & aside {
+        background-color: var(--color-primario);
+        padding: 17px;
+        border-radius: 5px;
+        font-size: smaller;
+      }
+
+      @media (width <= 1000px) {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+        padding-top: 15px;
+      }
+
+      @media (width <= 700px) {
+        justify-content: center;
+        flex-wrap: nowrap;
+
+        & nav {
+          display: none;
+        }
+
+        /* Menú hamburguesa para móviles */
+        & #contenedor-hamburguesa {
+          padding: 0;
+          width: 20%;
+          display: block !important;
+          text-align: center;
+          border-radius: 12%;
+          border: 1px solid var(--color-primario);
+
+          & i {
+            font-size: 2em;
+            color: var(--color-primario);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ========================================
+   MAIN - SLIDER
+   ======================================== */
+/* Hero section principal con fondo de imagen */
+#slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../public/images/FondoSlider.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: var(--color-primario);
+  padding: 300px var(--padding-seccion-horizontal);
+
+  & div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: var(--ancho-contenedor);
+    width: 100%;
+    row-gap: 15px;
+
+    & h2 {
+      font-size: 2.5em;
+    }
+
+    & form {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    & select {
+      padding: 10px;
+      width: 170px;
+    }
+
+    & button {
+      width: 120px;
+      border-radius: 6%;
+      border: none;
+      color: var(--color-primario);
+      font-family: var(--fuente-principal);
+    }
+  }
+}
+
+/* ========================================
+   MAIN - SERVICIO
+   ======================================== */
+/* Sección de características/servicios destacados */
+#servicio {
+  display: flex;
+  justify-content: center;
+  padding: var(--padding-seccion-vertical) var(--padding-seccion-horizontal);
+
+  & > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: var(--ancho-contenedor);
+    width: 100%;
+    gap: 55px;
+    border-bottom: 0.5px solid var(--color-secundario4);
+
+    @media (width <= 1000px) {
+      gap: 20px;
+    }
+
+    & article {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 45px;
+
+      & i {
+        font-size: 2em;
+        color: var(--color-resaltado);
+      }
+
+      & div {
+        display: flex;
+        flex-direction: column;
+
+        & h3 {
+          font-size: smaller;
+          margin: 0;
+        }
+
+        p {
+          margin: 0;
+          font-size: smaller;
+        }
+      }
+    }
+  }
+}
+
+/* ========================================
+   MAIN - PRODUCTOS DESTACADOS
+   ======================================== */
+/* Galería de productos destacados con navegación */
+#productos-destacados {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+
+  & > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: var(--ancho-contenedor);
+    width: 100%;
+    gap: 20px;
+
+    & > aside {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 25px;
+
+      & > img {
+        width: 100%;
+      }
+
+      & > div {
+        position: relative;
+
+        & img {
+          width: 100%;
+          height: 100%;
+        }
+
+        & button {
+          position: absolute;
+          padding: 10px 20px;
+          top: 60%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: var(--color-primario); /* usa variable del root */
+          color: var(--color-secundario1); /* usa variable del root */
+          border: 1px solid var(--color-secundario4); /* neutro desde root */
+          border-radius: 5%;
+          font-weight: bold;
+          font-family: var(--fuente-principal);
+        }
+      }
+
+      @media (width <= 1000px) {
+        flex-direction: row;
+      }
+
+      @media (width <= 750px) {
+        flex-direction: column;
+      }
+    }
+
+    & section {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      
+
+      & nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        & li a {
+          color: var(--color-secundario1);
+          font-family: var(--fuente-principal);
+
+          &:hover {
+            color: var(--color-resaltado);
+            border-bottom: 2px solid var(--color-resaltado);
+          }
+        }
+      }
+
+      & > div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+
+        & article {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          & img {
+            height: var(--altura-imagenes-galeria);
+            position: relative;
+          }
+
+          & h4 {
+            margin: 0;
+          }
+
+          & div:nth-of-type(1) {
+            position: relative;
+
+            & span {
+              position: absolute;
+              left: 10px;
+              padding: 5px;
+              top: 11px;
+              background-color: var(--color-resaltado);
+              color: var(--color-primario);
+            }
+          }
+
+          & > div:nth-of-type(2) {
+            font-family: var(--fuente-principal);
+
+            & del {
+              color: var(--color-secundario4);
+            }
+          }
+
+          & ul {
+            display: flex;
+            flex-direction: row;
+          }
+        }
+
+        @media (width <= 600px) {
+          grid-template-columns: repeat(2, 0.7fr);
+        }
+      }
+
+      @media (width <= 1000px) {
+        width: 70%;
+      }
+    }
+
+    @media (width <= 1000px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
+  }
+}
+
+/* ========================================
+   MAIN - MARCAS
+   ======================================== */
+/* Sección de logos de marcas con fondo de imagen */
+#marcas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url(../public/images/FondoSecciones.webp);
+  background-repeat: round;
+  color: var(--color-primario);
+  padding: 100px var(--padding-seccion-horizontal);
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    max-width: var(--ancho-contenedor);
+    width: 100%;
+
+    & ul {
+      display: grid;
+      list-style: none;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+
+      
+
+      & li img {
+        height: 100%;
+        width: 100%;
+        
+      }
+
+      @media (width <= 1000px) {
+        grid-template-columns: repeat(4, 1fr);
+
+      }
+
+      @media (width <= 750px) {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        
+      }
+    }
+  }
+}
+
+
+/* ========================================
+   MAIN - PRODUCTOS POR TIPO
+   ======================================== */
+/* Navegación de productos organizados por categorías */
+#productos-tipos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* centra horizontalmente los elementos */
+  text-align: center;  /* texto centrado por defecto */
+  gap: 65px;
+  padding: var(--padding-seccion-vertical) var(--padding-seccion-horizontal);
+
+  /* Enlaces con efecto hover */
+  & a {
+    color: var(--color-secundario1);
+
+    &:hover {
+      color: var(--color-resaltado);
+      border-bottom: 2px solid var(--color-resaltado);
+    }
+  }
+
+  /* Navegación con iconos de categorías */
+  & nav {
+    max-width: var(--ancho-contenedor);
+    width: 100%;
+
+    & > ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center; /* centra las columnas de categorías */
+
+      & li {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* centra el contenido dentro de cada li */
+        justify-content: center;
+        font-family: var(--fuente-principal);
+        font-weight: bold;
+        text-align: center;
+
+        & img {
+          height: 130px;
+          width: 130px;
+        }
+      }
+    }
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; /* centrar grid de productos */
+    align-items: center;
+    max-width: var(--ancho-contenedor);
+    font-size: smaller;
+    gap: 40px;
+
+    @media (width <= 1000px) {
+      gap: 25px;
+      justify-content: center;
+    }
+  }
+}
+
+/* ========================================
+   MAIN - KITS DE PRODUCTOS
+   ======================================== */
+/* Carrusel de kits especializados */
+#kits {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--fuente-principal);
+  gap: 30px;
+
+  /* Navegación y controles del carrusel */
+  & .encabezado-kits {
+    display: flex;
+    justify-content: space-between;
+
+   
+    & button {
+      padding: 5px;
+      border: 1px solid var(--color-secundario4);
+      background-color: var(--color-primario);
+      color: var(--color-secundario4);
+    }
+
+    & > ul {
+      font-weight: bold;
+      display: flex;
+      flex-direction: row;
+      gap: 25px;
+    }
+    
+     @media(width <= 750px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+
+  /* Contenedor de tarjetas de productos */
+  & .grid-kits {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+
+    /* Tarjeta de producto */
+    & article {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* centrar contenidos verticalmente */
+      text-align: center;  /* centrar texto dentro de la tarjeta */
+      justify-content: center;
+      font-family: var(--fuente-principal);
+
+      & img {
+        margin: 0 auto;
+      }
+      & del {
+        color: var(--color-secundario4);
+      }
+
+      & ul {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+      }
+
+      & h3 {
+        margin: 0;
+      }
+    }
+  }
+
+  /* Contenedor de badge */
+  & .contenedor-badge {
+    position: relative;
+  }
+
+  /* Badge "Sold out" */
+  & .badge-agotado {
+    position: absolute;
+    right: 10px;
+    padding: 8px;
+    top: 11px;
+    font-family: var(--fuente-secundaria);
+    background-color: var(--color-resaltado);
+    color: var(--color-primario);
+  }
+
+  /* Badge "Sale !" */
+  & .badge-oferta {
+    position: absolute;
+    left: 10px;
+    padding: 8px;
+    top: 11px;
+    font-family: var(--fuente-secundaria);
+    background-color: var(--color-resaltado);
+    color: var(--color-primario);
+  }
+}
+
+/* ========================================
+   MAIN - PRODUCTO DEL DÍA
+   ======================================== */
+/* Tarjeta destacada con oferta especial */
+#producto-del-dia {
+  border: 1px solid var(--color-resaltado);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & h4 {
+    margin: 0;
+  }
+
+  /* Encabezado con temporizador */
+  & > div {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    background-color: var(--color-resaltado);
+    width: 100%;
+    color: var(--color-primario);
+    justify-content: center;
+    align-items: center;
+
+    & button {
+      padding: 5px;
+      border: 1px solid var(--color-primario);
+      color: var(--color-resaltado);
+
+      & i {
+        color: var(--color-primario);
+      }
+    }
+  }
+
+  /* Contenido del producto */
+  & > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    font-family: var(--fuente-principal);
+
+    & img {
+      height: 190px;
+      width: 190px;
+    }
+
+    & > ul {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+    }
+  }
+}
+
+/* ========================================
+   MAIN - TESTIMONIOS
+   ======================================== */
+/* Sección de testimonios de clientes */
+#happy-clients {
+  background-image: url(../public/images/FondoSecciones.webp);
+  background-repeat: round;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-seccion-vertical) var(--padding-seccion-horizontal);
+
+  & div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-primario);
+    max-width: var(--ancho-contenedor);
+    row-gap: 30px;
+    text-align: center;
+
+    & strong {
+      font-family: var(--fuente-principal);
+    }
+
+    /* Estrellas de valoración */
+    & ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+
+      & li:nth-of-type(2),
+      li:nth-of-type(3) {
+        color: var(--color-secundario3);
+      }
+    }
+  }
+}
+
+/* ========================================
+   MAIN - BLOG / CONSEJOS
+   ======================================== */
+/* Sección de artículos del blog */
+#tips {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-seccion-vertical) var(--padding-seccion-horizontal);
+
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    max-width: var(--ancho-contenedor);
+  }
+
+  /* Tarjetas de artículos */
+  & article {
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    flex: 1 1 280px;
+    min-width: 250px;
+    max-width: 350px;
+
+    & img {
+      object-fit: contain;
+    }
+
+    & a {
+      font-family: var(--fuente-principal);
+      color: var(--color-resaltado);
+      font-weight: bold;
+    }
+  }
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+/* Pie de página con enlaces y formulario de suscripción */
+footer {
+  background-color: var(--color-secundario3);
+  color: var(--color-primario);
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+
+  & h2 {
+    font-size: smaller;
+  }
+
+  /* Contenedor principal del footer */
+  & > div {
+    max-width: var(--ancho-contenedor);
+    width: 100%;
+    padding-top: 45px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 15px;
+
+    /* Responsive: Tablets */
+    @media (width <= 1000px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Responsive: Móviles */
+    @media (width <= 750px) {
+      grid-template-columns: 1fr;
+    }
+
+    /* Secciones del footer */
+    & > section {
+      gap: 15px;
+      height: fit-content;
+
+      /* Centralización en responsive */
+      @media (width <= 1000px) {
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      & > img {
+        height: 80px;
+        width: auto;
+      }
+
+      & ul {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+
+    /* Primera sección: Logo e información de contacto */
+    & > section:first-of-type {
+      gap: 15px;
+      width: 100%;
+
+      & address {
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+    }
+
+    /* Formulario de newsletter */
+    & form {
+      display: flex;
+      flex-direction: row;
+      width: fit-content;
+
+      & input {
+        border: solid 1px var(--color-primario);
+        background-color: var(--color-secundario2);
+      }
+
+      & button {
+        border: none;
+        padding: 15px;
+      }
+    }
+
+    /* Enlaces del footer */
+    & a {
+      color: var(--color-footer-link);
+    }
+
+    /* Iconos del footer */
+    & i {
+      color: var(--color-primario);
+    }
+
+    /* Última sección: Copyright y redes sociales */
+    & > section:last-of-type {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      grid-column: 1 / -1;
+      padding: 20px;
+      border-top: 1px solid var(--color-secundario4);
+
+      /* Centralización en móviles */
+      @media (width <= 750px) {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      & > div {
+        & strong {
+          color: var(--color-resaltado);
+        }
+      }
+
+      /* Iconos de redes sociales */
+      & > section:nth-of-type(1) {
+        display: flex;
+        gap: 10px;
+      }
+    }
+  }
+}

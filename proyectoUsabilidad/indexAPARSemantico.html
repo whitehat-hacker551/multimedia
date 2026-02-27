@@ -1,0 +1,1105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APAR</title>
+
+    <link rel="stylesheet" href="static/css/styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Linear+B&family=Nova+Square&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Critical CSS (non-inline): preload and apply when loaded -->
+    <link rel="preload" href="static/css/critical.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="static/css/critical.css"></noscript>
+
+    <!-- Main stylesheet loaded non-blocking -->
+    <link rel="preload" href="static/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="static/css/styles.css"></noscript>
+
+    <!-- Preload hero image to improve LCP -->
+    <link rel="preload" as="image" href="static/public/images/FondoSlider.webp">
+
+    <!-- Bootstrap Icons loaded non-blocking -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"></noscript>
+  </head>
+  <body>
+    
+    <!-- ========== Página llamada desde la carpeta Multimedia ========== -->
+
+    <!-- ========== HEADER ========== -->
+    <header role="banner">
+      <!-- Barra superior: ubicación, horario, divisa e idioma -->
+      <section id="barra-superior">
+        <h2 class="none">
+          Barra Superior (Seccion de ubicacion, horario, divisa e idioma)
+        </h2>
+        <div>
+          <div>
+            <div>
+              <i
+                class="bi bi-geo-alt-fill iconos-resaltados"
+                aria-hidden="true"
+              ></i>
+              <!-- icono ubicación -->
+              Box 565, Charlestown, Nevis, West Indies
+            </div>
+            <div>
+              <i
+                class="bi bi-clock-fill iconos-resaltados"
+                aria-hidden="true"
+              ></i>
+              <!-- icono horario -->
+              Mon - Sat: 8:00 AM - 17:30 PM
+            </div>
+          </div>
+          <div>
+            <!-- Selector de divisa -->
+            <div>
+              <label for="selectorDivisa">Currency:</label>
+              <select name="Divisa" id="selectorDivisa">
+                <option selected value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="LB">LB</option>
+              </select>
+            </div>
+            <!-- Selector de idioma -->
+            <div>
+              <label for="selectorIdioma">Language:</label>
+              <select name="Idioma" id="selectorIdioma">
+                <option value="EEUU">EEUU</option>
+                <option value="ESP">ESP</option>
+                <option selected value="EN">EN</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Logo, barra de búsqueda, wishlist y carrito -->
+      <section id="barra-busqueda">
+        <h2 class="none">Seccion de busqueda , wishlist y carrito</h2>
+
+        <div>
+          <!-- Logo de la empresa -->
+          <img src="static/public/images/DG.webp" alt="APAR logo" width="80" height="80" loading="eager" decoding="async" />
+
+          <!-- Formulario de búsqueda de productos -->
+          <form action="">
+            <label for="searchInput" class="visually-hidden">Search products</label>
+            <input id="searchInput" type="search" placeholder="Search entire store item..." />
+            <button aria-label="Buscar">
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </button>
+          </form>
+          <div>
+            <div>
+              <a href="#" aria-label="Open wishlist"><i class="bi bi-heart" aria-hidden="true"></i></a>
+              <a href="#">WISHLIST </a>
+            </div>
+
+            <!-- Enlace al carrito de compras -->
+            <div>
+              <a href="#" aria-label="Open cart"><i class="bi bi-handbag" aria-hidden="true"></i></a>
+              <a href="#">MY CART</a>
+            </div>
+          </div>
+          <!-- Enlace a lista de deseos -->
+        </div>
+      </section>
+
+      <!-- Navegación principal -->
+      <section id="barra-navegacion">
+        <h2 class="none">Navegacion principal</h2>
+        <div>
+          <!-- Enlace a departamentos de la tienda -->
+          <a href="#">SHOP DEPARTMENTS</a>
+          <!-- Menú de navegación principal -->
+          <nav role="navigation">
+            <ul>
+              <li><a href="#">HOME</a><i class="bi bi-caret-down-fill"></i></li>
+              <li><a href="#">SHOP</a></li>
+              <li><a href="#">STORE LIST</a></li>
+              <li><a href="#">BlOG</a><i class="bi bi-caret-down-fill"></i></li>
+              <li>
+                <a href="#">PAGES</a><i class="bi bi-caret-down-fill"></i>
+              </li>
+              <li><a href="#">CONTACT</a></li>
+            </ul>
+          </nav>
+          <div id="contenedor-hamburguesa" class="none">
+            <i class="bi bi-list"></i>
+          </div>
+          <!-- Número de atención al cliente -->
+          <aside>HOTLINE: +0(800) 423-754</aside>
+        </div>
+      </section>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main role="main">
+      <h1 class="visually-hidden">Página Web APAR</h1>
+      <!-- Sección del slider principal con búsqueda de vehículos -->
+      <section id="slider">
+        <div>
+          <h2>SEARCH MATCHING YOUR VEHICLE</h2>
+          <div>Customize, Modify,Upgrade,Repair,Replace</div>
+
+          <!-- Formulario de búsqueda de vehículos por marca, modelo y año -->
+          <form action="">
+            <label for="makeSelect" class="visually-hidden">Make</label>
+            <select id="makeSelect" name="make">
+              <option value="">-- Make --</option>
+            </select>
+
+            <label for="modelSelect" class="visually-hidden">Model</label>
+            <select id="modelSelect" name="model">
+              <option value="">-- Model --</option>
+            </select>
+
+            <label for="yearSelect" class="visually-hidden">Year</label>
+            <select id="yearSelect" name="year">
+              <option value="">-- Year --</option>
+            </select>
+
+            <button>SEARCH</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Sección de servicios: beneficios de la tienda -->
+      <section id="servicio">
+        <h2 class="none">Seccion de informacion sobre el servicio</h2>
+        <div>
+          <!-- Envío gratuito -->
+          <article>
+            <i class="bi bi-truck iconos-resaltados" aria-hidden="true"></i>
+            <div>
+              <h3>FREE DELIVERY</h3>
+              <p>Worldwide from $27</p>
+            </div>
+          </article>
+
+          <!-- Productos genuinos -->
+          <article>
+            <i
+              class="bi bi-bookmark-star iconos-resaltados"
+              aria-hidden="true"
+            ></i>
+            <div>
+              <h3>100% GENUINE</h3>
+              <p>100 % genuine goods</p>
+            </div>
+          </article>
+
+          <!-- Devoluciones fáciles -->
+          <article>
+            <i class="bi bi-box-seam iconos-resaltados" aria-hidden="true"></i>
+            <div>
+              <h3>EZ PARTS RETURNS</h3>
+              <p>365 days return</p>
+            </div>
+          </article>
+
+          <!-- Programa de fidelidad -->
+          <article>
+            <i class="bi bi-gift iconos-resaltados" aria-hidden="true"></i>
+            <div>
+              <h3>LOYAL CUSTOMERS</h3>
+              <p>100k items available</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Sección de productos destacados -->
+      <section id="productos-destacados">
+        <h2 class="none">Seccion de productos "destacados"</h2>
+
+        <div>
+          <!-- Banners promocionales -->
+          <aside>
+            <img
+              src="static/public/images/ProductosDestacados/RooGooTire.webp"
+              alt="Promotional banner for RooGoo Tire products"
+            />
+            <div>
+              <button>SHOP NOW</button>
+              <img
+                src="static/public/images/ProductosDestacados/ASingleDaySale.webp"
+                alt="Single day sale promotional banner"
+              />
+            </div>
+          </aside>
+
+          <section>
+            <!-- Navegación de categorías de productos -->
+            <h3 class="none">Productos en Venta</h3>
+
+            <nav>
+              <ul>
+                <li>
+                  <a href="#">ON SALE</a>
+                </li>
+
+                <li>
+                  <a href="#">TRENDING</a>
+                </li>
+
+                <li>
+                  <a href="#">RECENT</a>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- Grid de productos destacados -->
+            <div>
+              <article>
+                <div>
+                  <img
+                    class="imagenesProductos"
+                    src="static/public/images/ProductosDestacados/Neumatico.webp"
+                    alt="Horrison tire product image"
+                    width="600" height="400"
+                    loading="lazy" decoding="async"
+                  />
+                  <span>Sale !</span>
+                </div>
+
+                <h4>HORRISON</h4>
+
+                <ul aria-label="Valoración: 5 de 5 estrellas">
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                </ul>
+                <div>
+                  <del>$397.90</del>
+                  <strong>$350.90</strong>
+                </div>
+              </article>
+              <article>
+                <div>
+                  <img
+                    class="imagenesProductos"
+                    src="static/public/images/ProductosDestacados/Llanta.webp"
+                    alt="Wallnut Desk wheel product image"
+                  />
+                  <span>Sale !</span>
+                </div>
+
+                <h4>WALLNUT DESK</h4>
+
+                <ul aria-label="Valoración: 5 de 5 estrellas">
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                </ul>
+                <div>
+                  <del>$419.90</del>
+                  <strong>$350.90</strong>
+                </div>
+              </article>
+              <article>
+                <div>
+                  <img
+                    class="imagenesProductos"
+                    src="static/public/images/ProductosDestacados/DiscoFreno.webp"
+                    alt="Arper Round brake disc product image"
+                  />
+                  <span>Sale !</span>
+                </div>
+
+                <h4>ARPER ROUND</h4>
+
+                <ul aria-label="Valoración: 5 de 5 estrellas">
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                </ul>
+                <div>
+                  <del>$249.90</del>
+                  <strong>$200.90</strong>
+                </div>
+              </article>
+              <article>
+                <div>
+                  <img
+                    class="imagenesProductos"
+                    src="static/public/images/ProductosDestacados/Aceite.webp"
+                    alt="Auto oil product image"
+                  />
+                  <span>Sale !</span>
+                </div>
+
+                <h4>AUTO OIL</h4>
+
+                <ul aria-label="Valoración: 5 de 5 estrellas">
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                </ul>
+                <div>
+                  <del>$29.90</del>
+                  <strong>$29.00</strong>
+                </div>
+              </article>
+              <article>
+                <div>
+                  <img
+                    class="imagenesProductos"
+                    src="static/public/images/ProductosDestacados/Rueda.webp"
+                    alt="Ulivo Set wheel product image"
+                  />
+                </div>
+
+                <h4>ULIVO SET</h4>
+
+                <ul aria-label="Valoración: 5 de 5 estrellas">
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                </ul>
+                <div>$59.90</div>
+              </article>
+              <article>
+                <div>
+                  <img
+                    class="imagenesProductos"
+                    src="static/public/images/ProductosDestacados/Turbocompresor.webp"
+                    alt="Ottoman Turbo turbocharger product image"
+                  />
+                  <span>Sale !</span>
+                </div>
+
+                <h4>OTTOMAN TURBO</h4>
+
+                <ul aria-label="Valoración: 5 de 5 estrellas">
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                </ul>
+                <div>
+                  <del>$79.90</del>
+                  <strong>$78.00</strong>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- Sección de marcas asociadas -->
+      <section id="marcas">
+        <div>
+          <h2>CHOOSE PARTS BY BRAND</h2>
+          <div>Lorem ipsum dolor sit amet, consectetur.</div>
+
+          <!-- Grid de logos de marcas -->
+          <ul>
+            <li>
+              <svg width="100" height="150" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Fondo circular -->
+                <circle cx="100" cy="100" r="95" fill="#1a73e8" stroke="#0d47a1" stroke-width="3"/>
+
+                <!-- Texto DG centrado -->
+                <text x="100" y="130" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="#ffffff" text-anchor="middle">
+                  DG
+                </text>
+              </svg>
+            </li>
+            <li>
+              <img src="static/public/images/Marcas/SportCar1.webp" alt="Sportcar logo" />
+            </li>
+            <li>
+              <img src="static/public/images/Marcas/AutoDetalier.webp" alt="AutoDetailer" />
+            </li>
+            <li>
+              <img src="static/public/images/Marcas/SportCar2.webp" alt="Sportcar logo 2" />
+            </li>
+            <li>
+              <img src="static/public/images/Marcas/AutoModif.webp" alt="AutoModif logo" />
+            </li>
+            <li>
+              <img
+                src="static/public/images/Marcas/GrantCar.webp"
+                alt="Grant Car Concepts logo"
+              />
+            </li>
+            <li>
+              <img
+                src="static/public/images/Marcas/GetEasyCar.webp"
+                alt="Get Easy Car logo"
+              />
+            </li>
+            <li>
+              <img src="static/public/images/Marcas/YourName.webp" alt="Logo Shield Car" />
+            </li>
+            <li>
+              <img src="static/public/images/Marcas/Company.webp" alt="Company Motors logo" />
+            </li>
+            <li>
+              <img
+                src="static/public/images/Marcas/HARRISAUTOS.webp"
+                alt="Harbers Autos logo"
+              />
+            </li>
+            <li>
+              <img src="static/public/images/Marcas/SpeedAuto.webp" alt="Speedauto logo" />
+            </li>
+            <li>
+              <img
+                src="static/public/images/Marcas/AutoCompany.webp"
+                alt="Diamond Brand logo"
+              />
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Sección de productos organizados por tipo -->
+      <section id="productos-tipos">
+        <h2 class="none">Seccion de productos por tipo</h2>
+        <!-- Navegación de tipos de productos con iconos -->
+        <nav>
+          <ul>
+            <li>
+              <img
+                src="static/public/images/TiposProductos/DiscoFreno.webp"
+                alt="Brake disc icon"
+              />
+              <a href="#">STOPTECH</a>
+            </li>
+            <li>
+              <img
+                src="static/public/images/TiposProductos/Llanta.webp"
+                alt="Wheel and tire icon"
+              />
+              <a href="#">WHEEL & TIRE</a>
+            </li>
+            <li>
+              <img src="static/public/images/TiposProductos/Camera.webp" alt="Camera icon" />
+              <a href="#">CAMERA</a>
+            </li>
+            <li>
+              <img src="static/public/images/TiposProductos/Turbo.webp" alt="Turbo icon" />
+              <a href="#">TURBO</a>
+            </li>
+            <li>
+              <img
+                src="static/public/images/TiposProductos/Volante.webp"
+                alt="Steering wheel icon"
+              />
+              <a href="#">STEERING</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div>
+          <!-- Sección de kits de productos -->
+          <section id="kits">
+            <h2 class="none">Kits de Servicios,Suspension y Luces</h2>
+            <div class="encabezado-kits">
+              <!-- Navegación de categorías de kits -->
+              <ul>
+                <li><a href="#">SERVICE KITS</a></li>
+                <li><a href="#">SUSPENSION</a></li>
+                <li><a href="#">LIGHTNING</a></li>
+              </ul>
+              <!-- Botones de navegación del carrusel -->
+              <div>
+                <button aria-label="Previous kits"><i class="bi bi-caret-left-fill" aria-hidden="true"></i></button>
+                <button aria-label="Next kits"><i class="bi bi-caret-right-fill" aria-hidden="true"></i></button>
+              </div>
+            </div>
+
+            <div class="grid-kits">
+              <article>
+                <img
+                  src="static/public/images/Kit/VolanteKit.png"
+                  alt="Task Pendant steering kit product image"
+                />
+                <h3>TASK PENDANT</h3>
+                <ul aria-label="Valoración: 5 de 5 estrellas">
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                </ul>
+                <div>$100.00 - $120.00</div>
+              </article>
+              <article>
+                <div class="contenedor-badge">
+                  <img
+                    src="static/public/images/Kit/FiltroKit.png"
+                    alt="Oak Wooden filter kit product image"
+                  />
+                  <span class="badge-agotado">Sold out</span>
+                </div>
+                <h3>OAK WOODEN</h3>
+                <ul aria-label="Valoración: 5 de 5 estrellas">
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                </ul>
+                <div>$59.90</div>
+              </article>
+              <article>
+                <div class="contenedor-badge">
+                  <img
+                    src="static/public/images/Kit/LlantaKit.png"
+                    alt="Umbrella Stand wheel kit product image"
+                  />
+                  <span class="badge-oferta">Sale !</span>
+                </div>
+                <h3>UMBRELLA STAND</h3>
+                <ul aria-label="Valoración: 5 de 5 estrellas">
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="bi bi-star-fill iconos-resaltados"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                </ul>
+                <div>
+                  <del>$79.90</del>
+                  <strong>$70.00</strong>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- Sección de oferta del día -->
+          <section id="producto-del-dia">
+            <div>
+              <h3>DEAL OF THE DAY</h3>
+              <!-- Navegación del producto destacado -->
+              <div>
+                <button aria-label="Previous product"><i class="bi bi-caret-left-fill" aria-hidden="true"></i></button>
+                <button aria-label="Next product"><i class="bi bi-caret-right-fill" aria-hidden="true"></i></button>
+              </div>
+            </div>
+            <!-- Detalles del producto destacado -->
+            <article>
+              <img
+                src="static/public/images/ProductoDelDia.webp"
+                alt="Yama Camera - Deal of the day product"
+                width="190" height="190"
+                loading="lazy" decoding="async"
+              />
+              <h4>YAMA CAMERA</h4>
+              <ul>
+                <li>
+                  <i
+                    class="bi bi-star-fill iconos-resaltados"
+                    aria-hidden="true"
+                  ></i>
+                </li>
+                <li>
+                  <i
+                    class="bi bi-star-fill iconos-resaltados"
+                    aria-hidden="true"
+                  ></i>
+                </li>
+                <li>
+                  <i
+                    class="bi bi-star-fill iconos-resaltados"
+                    aria-hidden="true"
+                  ></i>
+                </li>
+                <li>
+                  <i
+                    class="bi bi-star-fill iconos-resaltados"
+                    aria-hidden="true"
+                  ></i>
+                </li>
+                <li>
+                  <i
+                    class="bi bi-star-fill iconos-resaltados"
+                    aria-hidden="true"
+                  ></i>
+                </li>
+              </ul>
+              <div>$100.00</div>
+            </article>
+          </section>
+        </div>
+      </section>
+
+      <!-- Sección de testimonios de clientes -->
+      <section id="happy-clients">
+        <div>
+          <h2>OUR HAPPY CLIENTS</h2>
+          <!-- Calificación con estrellas -->
+          <ul>
+            <li>
+              <i
+                class="bi bi-star-fill iconos-resaltados"
+                aria-hidden="true"
+              ></i>
+            </li>
+            <li>
+              <i
+                class="bi bi-star-fill iconos-resaltados"
+                aria-hidden="true"
+              ></i>
+            </li>
+            <li>
+              <i
+                class="bi bi-star-fill iconos-resaltados"
+                aria-hidden="true"
+              ></i>
+            </li>
+            <li>
+              <i
+                class="bi bi-star-fill iconos-resaltados"
+                aria-hidden="true"
+              ></i>
+            </li>
+            <li>
+              <i
+                class="bi bi-star-fill iconos-resaltados"
+                aria-hidden="true"
+              ></i>
+            </li>
+          </ul>
+          <p>
+            Getting the coveted high-five in the hallway from an influence is
+            impressive in its own right, but what's realli impressive and where
+            you ought to focus your outreach efforts is getting press from
+            influencers in your market.
+          </p>
+          <strong>Jorgen J. Hansen</strong>
+          <ul>
+            <li>
+              <i
+                class="bi bi-square-fill iconos-resaltados"
+                aria-hidden="true"
+              ></i>
+            </li>
+            <li><i class="bi bi-square-fill" aria-hidden="true"></i></li>
+            <li><i class="bi bi-square-fill" aria-hidden="true"></i></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Sección de consejos y artículos del blog -->
+      <section id="tips">
+        <h2>TIPS ON THE CAR</h2>
+        <div>
+          <!-- Artículo 1 -->
+          <article>
+            <img
+              src="static/public/images/Tips/FirstTip.webp"
+              alt="Engine maintenance close-up"
+            />
+            <h3>NEW FROM BUYAUTOPARTS: MAGNETIC</h3>
+            <div>AIR CONDITIONING — by apar</div>
+            <p>
+              Like turbochargers and dual-clutch transmissions, active
+              suspension is supercar technology that has finally made its way to
+              more and more "normal" cars. Oddly enough, its the 3-hole box
+            </p>
+            <a href="#">READ MORE</a>
+          </article>
+
+          <article>
+            <img
+              src="static/public/images/Tips/SecondTip.webp"
+              alt="Trunk organization with tools"
+            />
+            <h3>UPGRADE FOR THE E30 AND E36 3 SERIES</h3>
+            <div>AUTO PARTS, BRAKES — by apar</div>
+            <p>
+              While they were the darling of the "yuppie" class when new, the
+              E30 and E36 3-Series from the 1980's and 1990's have now settled
+              somewhere between. Oddly...
+            </p>
+            <a href="#">READ MORE</a>
+          </article>
+
+          <article>
+            <img
+              src="static/public/images/Tips/ThirdTip.webp"
+              alt="Mechanic fixing car exhaust"
+            />
+            <h3>FIX YOUR RIDE, PROTECT THE ENVIRONMENT</h3>
+            <div>CAR FAIL, CAR FUN, CAR NEWS — by apar</div>
+            <p>
+              Cars are some of the biggest sources of pollution in the
+              environment, and it doesn't help if your daily driver is in bad
+              shape because it's very likely...
+            </p>
+            <a href="#">READ MORE</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+  
+
+    <!-- ========== FOOTER ========== -->
+    <footer role="contentinfo">
+      <div>
+        <!-- Columna 1: Información de contacto -->
+        <section>
+          <h2 class="none">Seccion de contacto</h2>
+          <img src="static/public/images/AparOscuro.png" alt="APAR logo" width="160" height="80" loading="lazy" decoding="async" />
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
+          <address>
+            <div>
+              <i
+                class="bi bi-geo-alt-fill iconos-resaltados"
+                aria-hidden="true"
+              ></i>
+              <!-- icono ubicación -->
+              Address: Box 565, Charlestown, Nevis, West Indies
+            </div>
+            <div>
+              <i
+                class="bi bi-telephone-fill iconos-resaltados"
+                aria-hidden="true"
+              ></i>
+              <!-- icono teléfono -->
+              Phone: +(48) 880 456 789
+            </div>
+
+            <div>
+              <i
+                class="bi bi-envelope-fill iconos-resaltados"
+                aria-hidden="true"
+              ></i>
+              <!-- icono email -->
+              Email: help-apar@gmail.com
+            </div>
+          </address>
+        </section>
+
+        <!-- Columna 2: Ayuda y soporte -->
+        <section>
+          <h2>HELP & SUPPORT</h2>
+          <ul>
+            <li><a href="#">Wishlist</a></li>
+            <li><a href="#">My Account</a></li>
+            <li><a href="#">Store Locator</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </section>
+
+        <!-- Columna 3: Acerca de nosotros -->
+        <section>
+          <h2>ABOUT US</h2>
+          <ul>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Product Recall</a></li>
+            <li><a href="#">Shipping</a></li>
+          </ul>
+        </section>
+
+        <!-- Columna 4: Suscripción al newsletter -->
+        <section>
+          <h2>SUBSCRIBE</h2>
+          <div>
+            Subscribe to our Newsletter and get bonuses for the next purchase.
+          </div>
+          <form action="">
+            <label for="newsletterEmail" class="visually-hidden">Email address</label>
+            <input id="newsletterEmail" type="email" placeholder="Enter Your Email" />
+            <button aria-label="Subscribe"><i class="bi bi-send" aria-hidden="true"></i></button>
+          </form>
+        </section>
+
+        <!-- Barra inferior: copyright, redes sociales y métodos de pago -->
+        <section>
+          <h2 class="none">Sección inferior del footer</h2>
+
+          <!-- Copyright -->
+          <div>
+            Copyright &copy; 2020 | <strong>APAR</strong> All Rights Reserved.
+          </div>
+
+          <!-- Iconos de redes sociales -->
+          <section>
+            <h3 class="none">Redes sociales</h3>
+            <i class="bi bi-facebook" aria-hidden="true"></i>
+            <i class="bi bi-twitter" aria-hidden="true"></i>
+            <i class="bi bi-youtube" aria-hidden="true"></i>
+            <i class="bi bi-pinterest" aria-hidden="true"></i>
+            <i class="bi bi-instagram" aria-hidden="true"></i>
+          </section>
+
+          <!-- Métodos de pago aceptados -->
+          <section>
+            <h3 class="none">Metodos de pago</h3>
+            <img src="static/public/images/PaymentsMethods/Paypal.png" alt="PayPal logo" width="64" height="40" loading="lazy" decoding="async" />
+            <img src="static/public/images/PaymentsMethods/Visa.png" alt="Visa logo" width="64" height="40" loading="lazy" decoding="async" />
+            <img
+              src="static/public/images/PaymentsMethods/AmericanExpress.png"
+              alt="American Express logo"
+              width="64" height="40" loading="lazy" decoding="async"
+            />
+            <img
+              src="static/public/images/PaymentsMethods/Mastercard.png"
+              alt="Mastercard logo"
+              width="64" height="40" loading="lazy" decoding="async"
+            />
+            <img
+              src="static/public/images/PaymentsMethods/Discover.png"
+              alt="Discover logo"
+              width="64" height="40" loading="lazy" decoding="async"
+            />
+          </section>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
