@@ -363,16 +363,15 @@ header {
   display: flex;
   flex-direction: column;
   position: relative;
-   aspect-ratio: 16 / 9;
-  min-height: 500px;
+   
   align-items: center;
   justify-content: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   color: var(--color-primario);
-  min-height: 650px;
-  padding: 0 var(--padding-seccion-horizontal);
+ min-height: 60vh;  
+ padding: 0 var(--padding-seccion-horizontal);
   & div {
     display: flex;
     flex-direction: column;
