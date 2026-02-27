@@ -20,11 +20,19 @@
   onload="this.media='all'"
 >
 
-    <!-- Load icons stylesheet non-blocking -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    </noscript>
+  <!-- Bootstrap Icons cargado de forma diferida (no bloqueante) -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  media="print"
+  onload="this.media='all'"
+>
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  >
+</noscript>
   </head>
   <body>
     
@@ -144,6 +152,7 @@
       <h1 class="visually-hidden">Página Web APAR</h1>
       <!-- Sección del slider principal con búsqueda de vehículos -->
       <section id="slider">
+        <img src="static/public/images/FondoSlider.webp" alt="" fetchpriority="high" decoding="async" aria-hidden="true" class="visually-hidden" />
         <div>
           <h2>SEARCH MATCHING YOUR VEHICLE</h2>
           <div>Customize, Modify,Upgrade,Repair,Replace</div>
