@@ -23,11 +23,7 @@
   --padding-seccion-vertical: 50px;
   --padding-seccion-horizontal: 20px;
 }
-/* Ensure bootstrap-icons font uses font-display: swap to avoid FOIT/CLS */
 
-html {
-  font-display: swap;
-}
 /* ========================================
    AAA - Target size & Visual presentation
    ======================================== */
@@ -83,9 +79,7 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
 }
-header {
-  min-height: 180px;
-}
+
 /* Tipografía de títulos */
 h1,
 h2,
@@ -148,14 +142,6 @@ button {
   color: var(--color-primario);
 }
 
-.lcp-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
 /* Media Query Global - Móviles pequeños */
 @media (max-width: 600px) {
   section,
@@ -364,16 +350,15 @@ header {
 #slider {
   display: flex;
   flex-direction: column;
-  position: relative;
-   
   align-items: center;
   justify-content: center;
+  background-image: url(../public/images/FondoSlider.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   color: var(--color-primario);
- min-height: 60vh;  
- padding: 0 var(--padding-seccion-horizontal);
+  padding: 300px var(--padding-seccion-horizontal);
+
   & div {
     display: flex;
     flex-direction: column;
@@ -411,8 +396,6 @@ header {
     }
   }
 }
-
-
 
 /* ========================================
    MAIN - SERVICIO
