@@ -350,6 +350,7 @@ header {
 #slider {
   display: flex;
   flex-direction: column;
+  position: relative;
   align-items: center;
   justify-content: center;
   background-image: url(../public/images/FondoSlider.webp);
@@ -395,6 +396,17 @@ header {
       font-family: var(--fuente-principal);
     }
   }
+}
+
+/* Invisible but discoverable LCP image overlay */
+.lcp-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* ========================================
