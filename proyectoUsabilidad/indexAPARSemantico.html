@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>APAR</title>
 
-    <link rel="stylesheet" href="static/css/styles.css" />
+<link rel="preload" href="static/css/styles.css" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="static/css/styles.css"></noscript>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -78,8 +79,7 @@
 
         <div>
           <!-- Logo de la empresa -->
-          <img src="static/public/images/DG.webp" alt="APAR logo" />
-
+<img src="static/public/images/DG.webp" alt="APAR logo" width="160" height="80" fetchpriority="high">
           <!-- Formulario de búsqueda de productos -->
           <form action="">
             <label for="searchInput" class="visually-hidden">Search products</label>
