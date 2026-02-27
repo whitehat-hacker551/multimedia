@@ -1,54 +1,24 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>APAR</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APAR</title>
 
-  <!-- Preload imagen LCP -->
-  <link
-    rel="preload"
-    as="image"
-    href="static/public/images/FondoSlider.webp"
-    fetchpriority="high"
-  >
+    <link rel="stylesheet" href="static/css/styles.css" />
 
-  <!-- CSS principal sin bloquear render -->
-  <link
-    rel="preload"
-    href="static/css/styles.css"
-    as="style"
-    onload="this.onload=null;this.rel='stylesheet'"
-  >
-  <noscript>
-    <link rel="stylesheet" href="static/css/styles.css">
-  </noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Linear+B&family=Nova+Square&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Google Font optimizada -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap"
-    rel="stylesheet"
-    media="print"
-    onload="this.media='all'"
-  >
-
-  <!-- Bootstrap Icons sin bloqueo -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    media="print"
-    onload="this.media='all'"
-  >
-  <noscript>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    >
-  </noscript>
-</head>
+    />
+  </head>
   <body>
     
     <!-- ========== Página llamada desde la carpeta Multimedia ========== -->
@@ -108,13 +78,8 @@
 
         <div>
           <!-- Logo de la empresa -->
-<img
-  src="static/public/images/DG.webp"
-  alt="APAR logo"
-  width="160"
-  height="80"
-  fetchpriority="high"
->
+          <img src="static/public/images/DG.webp" alt="APAR logo" />
+
           <!-- Formulario de búsqueda de productos -->
           <form action="">
             <label for="searchInput" class="visually-hidden">Search products</label>
@@ -172,7 +137,6 @@
       <h1 class="visually-hidden">Página Web APAR</h1>
       <!-- Sección del slider principal con búsqueda de vehículos -->
       <section id="slider">
-        <img src="static/public/images/FondoSlider.webp" alt="" fetchpriority="high" decoding="async" aria-hidden="true" class="lcp-image" width="1920" height="1080" />
         <div>
           <h2>SEARCH MATCHING YOUR VEHICLE</h2>
           <div>Customize, Modify,Upgrade,Repair,Replace</div>
@@ -254,14 +218,12 @@
             <img
               src="static/public/images/ProductosDestacados/RooGooTire.webp"
               alt="Promotional banner for RooGoo Tire products"
-              loading="lazy"
             />
             <div>
               <button>SHOP NOW</button>
               <img
                 src="static/public/images/ProductosDestacados/ASingleDaySale.webp"
                 alt="Single day sale promotional banner"
-                loading="lazy"
               />
             </div>
           </aside>
@@ -294,8 +256,6 @@
                     class="imagenesProductos"
                     src="static/public/images/ProductosDestacados/Neumatico.webp"
                     alt="Horrison tire product image"
-                    loading="lazy"
-                    height="200"
                   />
                   <span>Sale !</span>
                 </div>
@@ -345,8 +305,6 @@
                     class="imagenesProductos"
                     src="static/public/images/ProductosDestacados/Llanta.webp"
                     alt="Wallnut Desk wheel product image"
-                    loading="lazy"
-                    height="200"
                   />
                   <span>Sale !</span>
                 </div>
@@ -396,8 +354,6 @@
                     class="imagenesProductos"
                     src="static/public/images/ProductosDestacados/DiscoFreno.webp"
                     alt="Arper Round brake disc product image"
-                    loading="lazy"
-                    height="200"
                   />
                   <span>Sale !</span>
                 </div>
@@ -447,8 +403,6 @@
                     class="imagenesProductos"
                     src="static/public/images/ProductosDestacados/Aceite.webp"
                     alt="Auto oil product image"
-                    loading="lazy"
-                    height="200"
                   />
                   <span>Sale !</span>
                 </div>
@@ -498,8 +452,6 @@
                     class="imagenesProductos"
                     src="static/public/images/ProductosDestacados/Rueda.webp"
                     alt="Ulivo Set wheel product image"
-                    loading="lazy"
-                    height="200"
                   />
                 </div>
 
@@ -545,8 +497,6 @@
                     class="imagenesProductos"
                     src="static/public/images/ProductosDestacados/Turbocompresor.webp"
                     alt="Ottoman Turbo turbocharger product image"
-                    loading="lazy"
-                    height="200"
                   />
                   <span>Sale !</span>
                 </div>
@@ -615,52 +565,48 @@
               </svg>
             </li>
             <li>
-              <img src="static/public/images/Marcas/SportCar1.webp" alt="Sportcar logo" loading="lazy" />
+              <img src="static/public/images/Marcas/SportCar1.webp" alt="Sportcar logo" />
             </li>
             <li>
-              <img src="static/public/images/Marcas/AutoDetalier.webp" alt="AutoDetailer" loading="lazy" />
+              <img src="static/public/images/Marcas/AutoDetalier.webp" alt="AutoDetailer" />
             </li>
             <li>
-              <img src="static/public/images/Marcas/SportCar2.webp" alt="Sportcar logo 2" loading="lazy" />
+              <img src="static/public/images/Marcas/SportCar2.webp" alt="Sportcar logo 2" />
             </li>
             <li>
-              <img src="static/public/images/Marcas/AutoModif.webp" alt="AutoModif logo" loading="lazy" />
+              <img src="static/public/images/Marcas/AutoModif.webp" alt="AutoModif logo" />
             </li>
             <li>
               <img
                 src="static/public/images/Marcas/GrantCar.webp"
                 alt="Grant Car Concepts logo"
-                loading="lazy"
               />
             </li>
             <li>
               <img
                 src="static/public/images/Marcas/GetEasyCar.webp"
                 alt="Get Easy Car logo"
-                loading="lazy"
               />
             </li>
             <li>
-              <img src="static/public/images/Marcas/YourName.webp" alt="Logo Shield Car" loading="lazy" />
+              <img src="static/public/images/Marcas/YourName.webp" alt="Logo Shield Car" />
             </li>
             <li>
-              <img src="static/public/images/Marcas/Company.webp" alt="Company Motors logo" loading="lazy" />
+              <img src="static/public/images/Marcas/Company.webp" alt="Company Motors logo" />
             </li>
             <li>
               <img
                 src="static/public/images/Marcas/HARRISAUTOS.webp"
                 alt="Harbers Autos logo"
-                loading="lazy"
               />
             </li>
             <li>
-              <img src="static/public/images/Marcas/SpeedAuto.webp" alt="Speedauto logo" loading="lazy" />
+              <img src="static/public/images/Marcas/SpeedAuto.webp" alt="Speedauto logo" />
             </li>
             <li>
               <img
                 src="static/public/images/Marcas/AutoCompany.webp"
                 alt="Diamond Brand logo"
-                loading="lazy"
               />
             </li>
           </ul>
@@ -677,7 +623,6 @@
               <img
                 src="static/public/images/TiposProductos/DiscoFreno.webp"
                 alt="Brake disc icon"
-                loading="lazy"
               />
               <a href="#">STOPTECH</a>
             </li>
@@ -685,23 +630,21 @@
               <img
                 src="static/public/images/TiposProductos/Llanta.webp"
                 alt="Wheel and tire icon"
-                loading="lazy"
               />
               <a href="#">WHEEL & TIRE</a>
             </li>
             <li>
-              <img src="static/public/images/TiposProductos/Camera.webp" alt="Camera icon" loading="lazy" />
+              <img src="static/public/images/TiposProductos/Camera.webp" alt="Camera icon" />
               <a href="#">CAMERA</a>
             </li>
             <li>
-              <img src="static/public/images/TiposProductos/Turbo.webp" alt="Turbo icon" loading="lazy" />
+              <img src="static/public/images/TiposProductos/Turbo.webp" alt="Turbo icon" />
               <a href="#">TURBO</a>
             </li>
             <li>
               <img
                 src="static/public/images/TiposProductos/Volante.webp"
                 alt="Steering wheel icon"
-                loading="lazy"
               />
               <a href="#">STEERING</a>
             </li>
@@ -729,10 +672,9 @@
             <div class="grid-kits">
               <article>
                 <img
-                      src="static/public/images/Kit/VolanteKit.png"
-                      alt="Task Pendant steering kit product image"
-                      loading="lazy"
-                    />
+                  src="static/public/images/Kit/VolanteKit.png"
+                  alt="Task Pendant steering kit product image"
+                />
                 <h3>TASK PENDANT</h3>
                 <ul aria-label="Valoración: 5 de 5 estrellas">
                   <li>
@@ -773,7 +715,6 @@
                   <img
                     src="static/public/images/Kit/FiltroKit.png"
                     alt="Oak Wooden filter kit product image"
-                    loading="lazy"
                   />
                   <span class="badge-agotado">Sold out</span>
                 </div>
@@ -817,7 +758,6 @@
                   <img
                     src="static/public/images/Kit/LlantaKit.png"
                     alt="Umbrella Stand wheel kit product image"
-                    loading="lazy"
                   />
                   <span class="badge-oferta">Sale !</span>
                 </div>
@@ -877,8 +817,6 @@
               <img
                 src="static/public/images/ProductoDelDia.webp"
                 alt="Yama Camera - Deal of the day product"
-                loading="lazy"
-                height="190"
               />
               <h4>YAMA CAMERA</h4>
               <ul>
@@ -985,7 +923,6 @@
             <img
               src="static/public/images/Tips/FirstTip.webp"
               alt="Engine maintenance close-up"
-              loading="lazy"
             />
             <h3>NEW FROM BUYAUTOPARTS: MAGNETIC</h3>
             <div>AIR CONDITIONING — by apar</div>
@@ -1001,7 +938,6 @@
             <img
               src="static/public/images/Tips/SecondTip.webp"
               alt="Trunk organization with tools"
-              loading="lazy"
             />
             <h3>UPGRADE FOR THE E30 AND E36 3 SERIES</h3>
             <div>AUTO PARTS, BRAKES — by apar</div>
@@ -1017,7 +953,6 @@
             <img
               src="static/public/images/Tips/ThirdTip.webp"
               alt="Mechanic fixing car exhaust"
-              loading="lazy"
             />
             <h3>FIX YOUR RIDE, PROTECT THE ENVIRONMENT</h3>
             <div>CAR FAIL, CAR FUN, CAR NEWS — by apar</div>
@@ -1040,7 +975,7 @@
         <!-- Columna 1: Información de contacto -->
         <section>
           <h2 class="none">Seccion de contacto</h2>
-          <img src="static/public/images/AparOscuro.png" alt="APAR logo" loading="lazy" />
+          <img src="static/public/images/AparOscuro.png" alt="APAR logo" />
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -1131,22 +1066,19 @@
           <!-- Métodos de pago aceptados -->
           <section>
             <h3 class="none">Metodos de pago</h3>
-            <img src="static/public/images/PaymentsMethods/Paypal.png" alt="PayPal logo" loading="lazy" />
-            <img src="static/public/images/PaymentsMethods/Visa.png" alt="Visa logo" loading="lazy" />
+            <img src="static/public/images/PaymentsMethods/Paypal.png" alt="PayPal logo" />
+            <img src="static/public/images/PaymentsMethods/Visa.png" alt="Visa logo" />
             <img
               src="static/public/images/PaymentsMethods/AmericanExpress.png"
               alt="American Express logo"
-              loading="lazy"
             />
             <img
               src="static/public/images/PaymentsMethods/Mastercard.png"
               alt="Mastercard logo"
-              loading="lazy"
             />
             <img
               src="static/public/images/PaymentsMethods/Discover.png"
               alt="Discover logo"
-              loading="lazy"
             />
           </section>
         </section>
