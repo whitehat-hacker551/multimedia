@@ -84,9 +84,6 @@ body {
 header {
   min-height: 180px;
 }
-#slider {
-  min-height: 600px;
-}
 /* Tipografía de títulos */
 h1,
 h2,
@@ -372,8 +369,8 @@ header {
   background-size: cover;
   background-position: center;
   color: var(--color-primario);
-  padding: 300px var(--padding-seccion-horizontal);
-
+  min-height: 650px;
+  padding: 0 var(--padding-seccion-horizontal);
   & div {
     display: flex;
     flex-direction: column;
