@@ -81,7 +81,12 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
 }
-
+header {
+  min-height: 180px;
+}
+#slider {
+  min-height: 600px;
+}
 /* Tipografía de títulos */
 h1,
 h2,
@@ -150,6 +155,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: -1;
 }
 /* Media Query Global - Móviles pequeños */
 @media (max-width: 600px) {
